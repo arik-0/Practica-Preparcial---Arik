@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practica_Preparcial___Arik
 {
-    abstract class CuentaBancaria
+    public abstract class CuentaBancaria
     {
         public int NumeroCuenta { get; set; }
         public string Titular { get; set; }
