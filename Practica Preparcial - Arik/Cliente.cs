@@ -1,17 +1,19 @@
-﻿using System;
+﻿using Practica_Preparcial___Arik;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 namespace Practica_programacion_EJ_1
 {
-    class Cliente
+    public class Cliente
     {
-        
-        public int IdCliente { get; set; }
+
+        public Guid IdCliente { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Contrasena { get; set; }
+        public List<CuentaBancaria> Cuentas { get; set; } = new List<CuentaBancaria>();
 
         public void Login()
         {
@@ -65,10 +67,11 @@ namespace Practica_programacion_EJ_1
                     NuevoCliente.Apellido = Console.ReadLine();
                     Console.WriteLine("Clave:");
                     NuevoCliente.Contrasena = Console.ReadLine();
+                    NuevoCliente.IdCliente = Guid.NewGuid();
                     Repo.AgregarCliente(NuevoCliente);
                 }
                 else { Environment.Exit(1); }
             }
-        }
+        } 
     }
 }
